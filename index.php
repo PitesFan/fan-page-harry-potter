@@ -3,7 +3,6 @@
 session_start();
 
 $logo = 'images/logo.png';
-$heroImage = 'images/hero-image.jpg';
 $lang = [];
 $selected_lang = $_GET['lang'] ?? $_SESSION['lang'] ?? 'en';
 $allowed_langs = ['en', 'ro'];
