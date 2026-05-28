@@ -50,7 +50,7 @@ require_once "data/{$selected_lang}/home.php";
                 <button class="sign-up-btn accent-bg white"><?php echo $lang['signUp'] ?></button>
                 <button class="theme-btn white-bg"><?php echo $lang['theme'] ?></button>
                 <a class="lang-btn" href="?lang=<?php echo $lang['switchLang']; ?>">
-                    <img class="lang-btn" src="<?php echo $lang['langImg'] ?>" alt="<?php echo $lang['langAlt'] ?>">
+                    <img src="<?php echo $lang['langImg'] ?>" alt="<?php echo $lang['langAlt'] ?>">
                 </a>
             </div>
         </div>
