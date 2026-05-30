@@ -1,18 +1,22 @@
 <?php
 
 $lang = [
-    'h1' => 'Intră în lumea Harry Potter⚡',
-    'p' => 'Descoperă magie, vrăji și casa ta de la Hogwarts.',
+    'h2' => 'Înregistrare',
     'navLinks' => [
         ['label' => 'Acasă', 'url' => 'index.php'],
         ['label' => 'Despre', 'url' => 'about.php'],
         ['label' => 'Comunitate', 'url' => 'community.php'],
         ['label' => 'Contact', 'url' => 'contact.php']
     ],
+    'forms' => [
+        ['label' => 'Nume'],
+        ['label' => 'Email'],
+        ['label' => 'Parolă']
+    ],
     'logIn' => 'Autentificare',
-    'signUp' => 'înregistrare',
-    'theme' => '☀️',
+    'signUp' => 'Înregistrare',
+    'theme' => '🌑',
     'langImg' => 'images/en.svg',
     'switchLang' => 'en',
-    'langAlt' => 'Schimba in engleza'
+    'langAlt' => 'Switch to English'
 ];

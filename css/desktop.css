@@ -73,3 +73,56 @@
 .hero-info h1 {
   text-align: center;
 }
+
+/* Sign up section */
+
+.section {
+  display: grid;
+  grid-template-columns: repeat(12, 70px);
+  gap: 32px;
+  width: 100%;
+  justify-content: center;
+}
+
+.section-margin {
+  margin: 100px 0;
+}
+
+.signup-img {
+  grid-column: 6/12;
+  border-radius: 12px;
+  display: flex;
+  width: 100%;
+}
+
+.form-section {
+  grid-column: 2/6;
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  width: 100%;
+  justify-content: center;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  width: 100%;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  width: 100%;
+}
+
+.form-input input {
+  width: 100%;
+  height: 60px;
+  border-radius: 12px;
+  border: none;
+  padding: 0 12px;
+  box-sizing: border-box;
+}
