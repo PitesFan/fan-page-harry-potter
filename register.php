@@ -16,6 +16,18 @@ require_once "data/{$selected_lang}/register.php";
 
 ?>
 
+<?php
+require("php/register.class.php");
+
+?>
+
+<?php
+$user = null;
+if (isset($_POST['submit'])) {
+    $user = new RegisterUser($_POST['username'], $_POST['password']);
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -58,20 +70,25 @@ require_once "data/{$selected_lang}/register.php";
     <section class="section section-margin">
         <div class="form-section">
             <h2 class="white"><?php echo $lang['h2']; ?></h2>
-            <form class="register-form" action="php/save-account.php">
+            <form class="register-form" action="" method="post">
                 <div class="form-input">
                     <label class="light-gray" for=""><?php echo $lang['forms'][0]['label']; ?></label>
-                    <input class="light-gray-bg" type="name">
+                    <input class="light-gray-bg" type="text" name="username">
                 </div>
-                <div class="form-input">
+                <!-- <div class="form-input">
                     <label class="light-gray" for=""><?php echo $lang['forms'][1]['label']; ?></label>
                     <input class="light-gray-bg" type="email">
-                </div>
+                </div> -->
                 <div class="form-input">
                     <label class="light-gray" for=""><?php echo $lang['forms'][2]['label']; ?></label>
-                    <input class="light-gray-bg" type="password">
+                    <input class="light-gray-bg" type="text" name="password">
                 </div>
-                <button class="button submit-btn accent-bg white" type="submit"><?php echo $lang['signUp'] ?></button>
+                <button class="button submit-btn accent-bg white" type="submit" name="submit"><?php echo $lang['signUp'] ?></button>
+
+                <p class="error"><?php echo @$user->error ?></p>
+
+                <p class="success"><?php echo @$user->success ?></p>
+
             </form>
 
         </div>

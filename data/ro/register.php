@@ -15,8 +15,10 @@ $lang = [
     ],
     'logIn' => 'Autentificare',
     'signUp' => 'Înregistrare',
-    'theme' => '🌑',
+    'theme' => '☀️',
     'langImg' => 'images/en.svg',
     'switchLang' => 'en',
-    'langAlt' => 'Switch to English'
+    'langAlt' => 'Switch to English',
+    'errorMessage' => 'Incorrect username or passowrd',
+    'successMessage' => 'Log in succes'
 ];

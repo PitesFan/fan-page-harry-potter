@@ -199,3 +199,11 @@ input {
   align-items: center;
   margin-top: 20px;
 }
+
+.error {
+  color: #fa0d0d;
+}
+
+.success {
+  color: #f8f8f8;
+}
