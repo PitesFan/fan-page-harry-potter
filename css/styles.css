@@ -200,10 +200,11 @@ input {
   margin-top: 20px;
 }
 
-.error {
-  color: #fa0d0d;
-}
-
-.success {
-  color: #f8f8f8;
+.profile-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  font-size: 20px;
 }

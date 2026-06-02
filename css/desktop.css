@@ -74,7 +74,7 @@
   text-align: center;
 }
 
-/* Sign up section */
+/* Sign up and login section */
 
 .section {
   display: grid;
@@ -126,4 +126,17 @@
   border: none;
   padding: 0 12px;
   box-sizing: border-box;
+}
+
+/* Footer */
+
+.footer {
+  grid-column: 1/13;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  border-radius: 16px;
+  height: fit-content;
+  margin-bottom: 24px;
 }

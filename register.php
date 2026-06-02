@@ -85,15 +85,22 @@ if (isset($_POST['submit'])) {
                 </div>
                 <button class="button submit-btn accent-bg white" type="submit" name="submit"><?php echo $lang['signUp'] ?></button>
 
-                <p class="error"><?php echo @$user->error ?></p>
+                <p class="accent"><?php echo @$user->error ?></p>
 
-                <p class="success"><?php echo @$user->success ?></p>
+                <p class="slytherin"><?php echo @$user->success ?></p>
 
             </form>
 
         </div>
 
         <img class="signup-img" src="images/signup-img.jpg" alt="">
+    </section>
+
+    <section class="section">
+        <div class="footer  white-bg">
+            <a href="index.php"><img class="logo white-bg" src=" <?php echo $logo; ?> "></a>
+            <a class="black" target="_blank" href="https://github.com/PitesFan">Made by PitesFan</a>
+        </div>
     </section>
 
 

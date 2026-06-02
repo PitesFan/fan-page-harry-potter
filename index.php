@@ -43,15 +43,22 @@ require_once "data/{$selected_lang}/home.php";
                     <a class="black" href="<?php echo $lang['navLinks'][3]['url']; ?>"><?php echo $lang['navLinks'][3]['label']; ?></a>
                 </li>
             </ul>
-
-            <div class="header-buttons">
-                <a href="login.php" class="button log-in-btn accent"><?php echo $lang['logIn'] ?></a>
-                <a href="register.php" class="button sign-up-btn accent-bg white"><?php echo $lang['signUp'] ?></a>
-                <a class="button theme-btn black-bg"><?php echo $lang['theme'] ?></a>
-                <a class="lang-btn" href="?lang=<?php echo $lang['switchLang']; ?>">
-                    <img src="<?php echo $lang['langImg'] ?>" alt="<?php echo $lang['langAlt'] ?>">
-                </a>
-            </div>
+            <?php if (isset($_SESSION['user'])) { ?> <div class="header-buttons">
+                    <a href="account.php" class="button profile-btn black-bg"><img src="images/profile-icon.svg" alt=""></a>
+                    <a class="button theme-btn black-bg"><?php echo $lang['theme'] ?></a>
+                    <a class="lang-btn" href="?lang=<?php echo $lang['switchLang']; ?>">
+                        <img src="<?php echo $lang['langImg'] ?>" alt="<?php echo $lang['langAlt'] ?>">
+                    </a>
+                </div>
+            <?php } else { ?>
+                <div class="header-buttons">
+                    <a href="login.php" class="button log-in-btn accent"><?php echo $lang['logIn'] ?></a>
+                    <a href="register.php" class="button sign-up-btn accent-bg white"><?php echo $lang['signUp'] ?></a>
+                    <a class="button theme-btn black-bg"><?php echo $lang['theme'] ?></a>
+                    <a class="lang-btn" href="?lang=<?php echo $lang['switchLang']; ?>">
+                        <img src="<?php echo $lang['langImg'] ?>" alt="<?php echo $lang['langAlt'] ?>">
+                    </a>
+                </div> <?php } ?>
         </div>
 
         <div class="hero-info">
