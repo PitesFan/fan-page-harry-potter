@@ -10,7 +10,7 @@ $lang = [
         ['label' => 'Contact', 'url' => 'contact.php']
     ],
     'logIn' => 'Autentificare',
-    'signUp' => 'înregistrare',
+    'signUp' => 'Înregistrare',
     'theme' => '☀️',
     'langImg' => 'images/en.svg',
     'switchLang' => 'en',

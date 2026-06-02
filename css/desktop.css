@@ -88,7 +88,8 @@
   margin: 100px 0;
 }
 
-.signup-img {
+.signup-img,
+.login-img {
   grid-column: 6/12;
   border-radius: 12px;
   display: flex;

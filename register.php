@@ -24,7 +24,7 @@ require("php/register.class.php");
 <?php
 $user = null;
 if (isset($_POST['submit'])) {
-    $user = new RegisterUser($_POST['username'], $_POST['password']);
+    $user = new RegisterUser($_POST['username'], $_POST['email'], $_POST['password'], $selected_lang);
 }
 ?>
 
@@ -75,13 +75,13 @@ if (isset($_POST['submit'])) {
                     <label class="light-gray" for=""><?php echo $lang['forms'][0]['label']; ?></label>
                     <input class="light-gray-bg" type="text" name="username">
                 </div>
-                <!-- <div class="form-input">
+                <div class="form-input">
                     <label class="light-gray" for=""><?php echo $lang['forms'][1]['label']; ?></label>
-                    <input class="light-gray-bg" type="email">
-                </div> -->
+                    <input class="light-gray-bg" type="email" name="email">
+                </div>
                 <div class="form-input">
                     <label class="light-gray" for=""><?php echo $lang['forms'][2]['label']; ?></label>
-                    <input class="light-gray-bg" type="text" name="password">
+                    <input class="light-gray-bg" type="password" name="password">
                 </div>
                 <button class="button submit-btn accent-bg white" type="submit" name="submit"><?php echo $lang['signUp'] ?></button>
 

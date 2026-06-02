@@ -1,7 +1,7 @@
 <?php
 
 $lang = [
-    'h2' => 'Înregistrare',
+    'h2' => 'Intră în cont',
     'navLinks' => [
         ['label' => 'Acasă', 'url' => 'index.php'],
         ['label' => 'Despre', 'url' => 'about.php'],
@@ -9,7 +9,6 @@ $lang = [
         ['label' => 'Contact', 'url' => 'contact.php']
     ],
     'forms' => [
-        ['label' => 'Nume'],
         ['label' => 'Email'],
         ['label' => 'Parolă']
     ],

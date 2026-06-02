@@ -12,7 +12,7 @@ if (!in_array($selected_lang, $allowed_langs)) {
 
 $_SESSION['lang'] = $selected_lang;
 
-require_once "data/{$selected_lang}/register.php";
+require_once "data/{$selected_lang}/login.php";
 
 ?>
 
@@ -23,7 +23,7 @@ require("php/login.class.php");
 <?php
 $user = null;
 if (isset($_POST['submit'])) {
-    $user = new LoginUser($_POST['username'], $_POST['password']);
+    $user = new LoginUser($_POST['email'], $_POST['password'], $selected_lang);
 }
 ?>
 
@@ -57,7 +57,7 @@ if (isset($_POST['submit'])) {
             </ul>
 
             <div class="header-buttons">
-                <a href="login.php" class="button log-in-btn accent"><?php echo $lang['logIn'] ?></a>
+                <a href="register.php" class="button sign-up-btn accent-bg white"><?php echo $lang['signUp'] ?></a>
                 <a class="button theme-btn black-bg"><?php echo $lang['theme'] ?></a>
                 <a class="lang-btn" href="?lang=<?php echo $lang['switchLang']; ?>">
                     <img src="<?php echo $lang['langImg'] ?>" alt="<?php echo $lang['langAlt'] ?>">
@@ -72,14 +72,10 @@ if (isset($_POST['submit'])) {
             <form class="register-form" action="" method="post">
                 <div class="form-input">
                     <label class="light-gray" for=""><?php echo $lang['forms'][0]['label']; ?></label>
-                    <input class="light-gray-bg" type="text" name="username">
+                    <input class="light-gray-bg" type="email" name="email">
                 </div>
-                <!-- <div class="form-input">
-                    <label class="light-gray" for=""><?php echo $lang['forms'][1]['label']; ?></label>
-                    <input class="light-gray-bg" type="email">
-                </div> -->
                 <div class="form-input">
-                    <label class="light-gray" for=""><?php echo $lang['forms'][2]['label']; ?></label>
+                    <label class="light-gray" for=""><?php echo $lang['forms'][1]['label']; ?></label>
                     <input class="light-gray-bg" type="text" name="password">
                 </div>
                 <button class="button submit-btn accent-bg white" type="submit" name="submit"><?php echo $lang['signUp'] ?></button>
@@ -92,7 +88,7 @@ if (isset($_POST['submit'])) {
 
         </div>
 
-        <img class="signup-img" src="images/signup-img.jpg" alt="">
+        <img class="login-img" src="images/login-img.jpg" alt="">
     </section>
 
 
