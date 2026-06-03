@@ -39,7 +39,7 @@ $next_theme = $theme === 'dark' ? 'light' : 'dark';
 <body class="<?php echo $theme === 'dark' ? 'black-bg' : 'white-bg'; ?>">
     <section class="hero-section">
         <div class="header <?php echo $theme === 'dark' ? 'white-bg' : 'black-bg'; ?>">
-            <a href="index.php"><img class="logo white-bg " src=" <?php echo $logo; ?> "></a>
+            <a class="logo white-bg " href="index.php"><img class="logo white-bg " src=" <?php echo $logo; ?> "></a>
 
             <ul class="nav-links">
                 <li>

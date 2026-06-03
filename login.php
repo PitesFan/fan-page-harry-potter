@@ -14,6 +14,17 @@ $_SESSION['lang'] = $selected_lang;
 
 require_once "data/{$selected_lang}/login.php";
 
+$theme = [];
+$allowed_themes = ['dark', 'light'];
+$selected_theme = $_GET['theme'] ?? $_SESSION['theme'] ?? 'dark';
+if (!in_array($selected_theme, $allowed_themes)) {
+    $selected_theme = 'dark';
+}
+
+$_SESSION['theme'] = $selected_theme;
+$theme = $selected_theme;
+$next_theme = $theme === 'dark' ? 'light' : 'dark';
+
 ?>
 
 <?php
@@ -36,29 +47,33 @@ if (isset($_POST['submit'])) {
     <link rel="stylesheet" href="css/adaptive.css">
 </head>
 
-<body class="black-bg">
+<body class="<?php echo $theme === 'dark' ? 'black-bg' : 'white-bg'; ?>">
     <section class="section">
-        <div class="header white-bg">
-            <a href="index.php"><img class="logo white-bg" src=" <?php echo $logo; ?> "></a>
+        <div class="header <?php echo $theme === 'dark' ? 'white-bg' : 'black-bg'; ?>">
+            <a class="logo white-bg " href="index.php"><img class="logo white-bg " src=" <?php echo $logo; ?> "></a>
 
             <ul class="nav-links">
                 <li>
-                    <a class="black" href="<?php echo $lang['navLinks'][0]['url']; ?>"><?php echo $lang['navLinks'][0]['label']; ?></a>
+                    <a class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>" href="<?php echo $lang['navLinks'][0]['url']; ?>"><?php echo $lang['navLinks'][0]['label']; ?></a>
                 </li>
                 <li>
-                    <a class="black" href="<?php echo $lang['navLinks'][1]['url']; ?>"><?php echo $lang['navLinks'][1]['label']; ?></a>
+                    <a class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>" href="<?php echo $lang['navLinks'][1]['url']; ?>"><?php echo $lang['navLinks'][1]['label']; ?></a>
                 </li>
                 <li>
-                    <a class="black" href="<?php echo $lang['navLinks'][2]['url']; ?>"><?php echo $lang['navLinks'][2]['label']; ?></a>
+                    <a class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>" href="<?php echo $lang['navLinks'][2]['url']; ?>"><?php echo $lang['navLinks'][2]['label']; ?></a>
                 </li>
                 <li>
-                    <a class="black" href="<?php echo $lang['navLinks'][3]['url']; ?>"><?php echo $lang['navLinks'][3]['label']; ?></a>
+                    <a class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>" href="<?php echo $lang['navLinks'][3]['url']; ?>"><?php echo $lang['navLinks'][3]['label']; ?></a>
                 </li>
             </ul>
 
             <div class="header-buttons">
                 <a href="register.php" class="button sign-up-btn accent-bg white"><?php echo $lang['signUp'] ?></a>
-                <a class="button theme-btn black-bg"><?php echo $lang['theme'] ?></a>
+                <a class="button theme-btn <?php echo $theme === 'dark' ? 'black-bg' : 'white-bg'; ?>" href="?theme=<?php echo $next_theme; ?>"><?php if ($theme == 'dark') {
+                                                                                                                                                    echo '☀️';
+                                                                                                                                                } else {
+                                                                                                                                                    echo '🌑';
+                                                                                                                                                } ?></a>
                 <a class="lang-btn" href="?lang=<?php echo $lang['switchLang']; ?>">
                     <img src="<?php echo $lang['langImg'] ?>" alt="<?php echo $lang['langAlt'] ?>">
                 </a>
@@ -68,15 +83,15 @@ if (isset($_POST['submit'])) {
 
     <section class="section section-margin">
         <div class="form-section">
-            <h2 class="white"><?php echo $lang['h2']; ?></h2>
+            <h2 class="<?php echo $theme === 'dark' ? 'white' : 'black'; ?>"><?php echo $lang['h2']; ?></h2>
             <form class="register-form" action="" method="post">
                 <div class="form-input">
-                    <label class="light-gray" for=""><?php echo $lang['forms'][0]['label']; ?></label>
-                    <input class="light-gray-bg" type="email" name="email">
+                    <label class="<?php echo $theme === 'dark' ? 'light-gray' : 'dark-gray'; ?>" for=""><?php echo $lang['forms'][0]['label']; ?></label>
+                    <input class="<?php echo $theme === 'dark' ? 'light-gray-bg' : 'dark-gray-bg'; ?>" type="email" name="email">
                 </div>
                 <div class="form-input">
-                    <label class="light-gray" for=""><?php echo $lang['forms'][1]['label']; ?></label>
-                    <input class="light-gray-bg" type="text" name="password">
+                    <label class="<?php echo $theme === 'dark' ? 'light-gray' : 'dark-gray'; ?>" for=""><?php echo $lang['forms'][1]['label']; ?></label>
+                    <input class="<?php echo $theme === 'dark' ? 'light-gray-bg' : 'dark-gray-bg'; ?>" type="text" name="password">
                 </div>
                 <button class="button submit-btn accent-bg white" type="submit" name="submit"><?php echo $lang['signUp'] ?></button>
 
@@ -92,11 +107,26 @@ if (isset($_POST['submit'])) {
     </section>
 
     <section class="section">
-        <div class="footer  white-bg">
-            <a href="index.php"><img class="logo white-bg" src=" <?php echo $logo; ?> "></a>
-            <a class="black" target="_blank" href="https://github.com/PitesFan">Made by PitesFan</a>
+        <div class="footer  <?php echo $theme === 'dark' ? 'white-bg' : 'black-bg'; ?>">
+            <a class="logo white-bg" href="index.php"><img class="logo white-bg" src=" <?php echo $logo; ?> "></a>
+            <a class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>" target="_blank" href="https://github.com/PitesFan">Made by PitesFan</a>
         </div>
     </section>
+
+    <style>
+        <?php echo $theme === 'dark' ? '
+        .form-input input {
+            color: #0d0000;
+        }
+        .form-input input:focus {
+             color: #0d0000;
+        }' : '.form-input input {
+            color: #f8f8f8;
+        }
+        .form-input input:focus {
+            color: #f8f8f8;
+        }'; ?>
+    </style>
 
 
 </body>
