@@ -3,5 +3,10 @@
         "username": "123",
         "email": "123@email.com",
         "password": "$2y$10$qThgH8mbARZIpVpatdgriOqlkW\/ZOoYXB2k\/j51n.ZClfcZlz362W"
+    },
+    {
+        "username": "Testname1234",
+        "email": "testemail@gmail.com",
+        "password": "$2y$10$J6\/8E5mXeJ4sie3cIASlDO733xOPEz4dM2J8725z5GIiuw5jOYs9O"
     }
 ]

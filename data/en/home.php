@@ -11,7 +11,6 @@ $lang = [
     ],
     'logIn' => 'Log in',
     'signUp' => 'Sign up',
-    'theme' => '☀️',
     'langImg' => 'images/ro.svg',
     'switchLang' => 'ro',
     'langAlt' => 'Switch to Romanian'

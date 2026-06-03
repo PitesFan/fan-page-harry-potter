@@ -14,8 +14,7 @@ $lang = [
     ],
     'logIn' => 'Autentificare',
     'signUp' => 'Înregistrare',
-    'theme' => '☀️',
     'langImg' => 'images/en.svg',
     'switchLang' => 'en',
-    'langAlt' => 'Switch to English',
+    'langAlt' => 'Schimba in engleza'
 ];

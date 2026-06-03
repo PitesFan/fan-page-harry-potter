@@ -128,6 +128,52 @@
   box-sizing: border-box;
 }
 
+/* Profile styles */
+.profile-section {
+  row-gap: 40px;
+}
+
+.profile {
+  grid-column: 4/10;
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+  max-width: 100%;
+  box-sizing: border-box;
+  justify-content: center;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  width: fit-content;
+}
+
+.profile-details-row {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  justify-content: space-between;
+}
+
+.section-texts-profile {
+  grid-column: 1/13;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.profile-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+}
+
 /* Footer */
 
 .footer {

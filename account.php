@@ -12,7 +12,7 @@ if (!in_array($selected_lang, $allowed_langs)) {
 
 $_SESSION['lang'] = $selected_lang;
 
-require_once "data/{$selected_lang}/register.php";
+require_once "data/{$selected_lang}/account.php";
 
 ?>
 
@@ -28,6 +28,66 @@ if (isset($_GET['logout'])) {
     header("location: login.php");
     exit();
 }
+?>
+
+<?php
+class userAccount
+{
+    private $email;
+    private $username;
+    private $password;
+    public $error;
+    public $success;
+    private $storage = "data/users.json";
+    private $stored_users;
+
+    public function __construct($email = '', $password = '', $username = '')
+    {
+        $this->username = $username;
+        $this->email = $email;
+        $this->password = $password;
+        $this->stored_users = json_decode(file_get_contents($this->storage), true);
+    }
+
+    public static function fromSession()
+    {
+        $stored_users = json_decode(file_get_contents("data/users.json"), true) ?: [];
+
+        foreach ($stored_users as $stored_user) {
+            if (!is_array($stored_user) || !isset($stored_user['email'])) {
+                continue;
+            }
+
+            if ($stored_user['email'] === $_SESSION['user']) {
+                return new self(
+                    $stored_user['email'],
+                    $stored_user['password'] ?? '',
+                    $stored_user['username'] ?? ''
+                );
+            }
+        }
+
+        return new self();
+    }
+
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    public function getPassword()
+    {
+        return $this->password;
+    }
+}
+
+$user = userAccount::fromSession();
+
 ?>
 
 
@@ -70,9 +130,32 @@ if (isset($_GET['logout'])) {
             </div>
         </div>
     </section>
+    <section class="section section-margin profile-section">
+        <div class="section-texts-profile">
+            <h2 class="white"><?php echo $lang['h2'] ?></h2>
+            <p class="light-gray"><?php echo $lang['p'] ?></p>
+        </div>
+        <div class="profile white-bg">
+            <div class="profile-details">
+                <div class="profile-details-row">
+                    <h5><?php echo $lang['username'] ?></h5>
+                    <p><?php echo $user->getUsername(); ?></p>
+                </div>
+                <div class="profile-details-row">
+                    <h5><?php echo $lang['email'] ?></h5>
+                    <p><?php echo $user->getEmail(); ?></p>
+                </div>
+            </div>
+            <div class="profile-buttons">
+                <a class="button sign-up-btn white accent-bg"><?php echo $lang['edit'] ?></a>
+                <a class="button log-in-btn accent" href="?logout"><?php echo $lang['logout'] ?></a>
+            </div>
+        </div>
 
-    <h2>Welcome <?php echo $_SESSION['user']; ?></h2>
-    <a href="?logout">Log out</a>
+    </section>
+
+
+
 </body>
 
 </html>
