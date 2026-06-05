@@ -168,6 +168,10 @@ $user = userAccount::fromSession();
 
     </section>
 
+    <section>
+
+    </section>
+
     <section class="section">
         <div class="footer  <?php echo $theme === 'dark' ? 'white-bg' : 'black-bg'; ?>">
             <a class="logo white-bg" href="index.php"><img class="logo white-bg" src=" <?php echo $logo; ?> "></a>

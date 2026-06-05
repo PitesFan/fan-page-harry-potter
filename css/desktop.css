@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 /* Hero section */
@@ -11,10 +12,19 @@
   gap: 32px;
   width: 100%;
   justify-content: center;
-  background-image: url("../images/hero-image.jpg");
   height: 100vh;
-  background-size: cover;
-  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
 }
 
 .header {
@@ -53,6 +63,7 @@
 }
 
 .hero-info {
+  padding: 20px 0;
   justify-self: center;
   max-width: 800px;
   height: fit-content;

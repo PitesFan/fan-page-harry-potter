@@ -81,6 +81,11 @@ $next_theme = $theme === 'dark' ? 'light' : 'dark';
                 </div> <?php } ?>
         </div>
 
+        <video autoplay muted loop playsinline class="background-video">
+            <source src="images/hero-image.webm" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
         <div class="hero-info">
             <h1 class="white"><?php echo $lang['h1'] ?></h1>
             <p class="light-gray"><?php echo $lang['p'] ?></p>
