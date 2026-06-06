@@ -11,7 +11,7 @@ $lang = [
     'cards' => [
         ['label' => 'Acest site web a fost creat pentru a aduce magia universului Harry Potter mai aproape de fani. 🏰'],
         ['label' => 'Utilizatorii pot crea postări ✍️, își pot împărtăși ideile și pot explora vrăji, personaje și case de la Hogwarts.'],
-        ['label' => 'De asemenea, poți face un test distractiv 🧠 pentru a-ți descoperi casa de la Hogwarts și a-ți testa cunoștințele.'],
+        ['label' => 'Poți face un test distractiv 🧠 pentru a-ți descoperi casa de la Hogwarts și a-ți testa cunoștințele.'],
         ['label' => 'Ai o idee? Trimite sugestii prin formularul de contact 💌 și ajută la îmbunătățirea experienței.']
     ],
     'logIn' => 'Autentificare',

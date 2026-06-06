@@ -86,13 +86,28 @@ $next_theme = $theme === 'dark' ? 'light' : 'dark';
     <section class="section section-margin">
         <div class="about-section">
             <h2 class="<?php echo $theme === 'dark' ? 'white' : 'dark'; ?>"><?php echo $lang['h2-about']; ?></h2>
-            <div class="about-cards">
-                <div>
-                    <img src="" alt="">
-                    <p></p>
+            <div class="about-cards section">
+                <div class="about-cards-column-1">
+                    <div class="about-card">
+                        <img src="images/about-img-1.svg" alt="">
+                        <p class="white"><?php echo $lang['cards'][0]['label']; ?></p>
+                    </div>
+                    <div class="about-card">
+                        <img src="images/about-img-2.svg" alt="">
+                        <p class="white"><?php echo $lang['cards'][1]['label']; ?></p>
+                    </div>
                 </div>
-                <img src="" alt="">
-
+                <img class="about-img" src="images/about-img.jpg" alt="">
+                <div class="about-cards-column-2">
+                    <div class="about-card">
+                        <img src="images/about-img-3.svg" alt="">
+                        <p class="white"><?php echo $lang['cards'][2]['label']; ?></p>
+                    </div>
+                    <div class="about-card">
+                        <img src="images/about-img-4.svg" alt="">
+                        <p class="white"><?php echo $lang['cards'][3]['label']; ?></p>
+                    </div>
+                </div>
             </div>
         </div>
 
