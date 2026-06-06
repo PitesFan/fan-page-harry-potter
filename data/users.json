@@ -8,5 +8,10 @@
         "username": "Testname1234",
         "email": "testemail@gmail.com",
         "password": "$2y$10$J6\/8E5mXeJ4sie3cIASlDO733xOPEz4dM2J8725z5GIiuw5jOYs9O"
+    },
+    {
+        "username": "PitesFan",
+        "email": "pitesfan@gmail.com",
+        "password": "$2y$10$h.K3007QFw4z35pSbqy5gera5l2vU8E8WEbCqKKjhJmKmaYpv2.Oa"
     }
 ]

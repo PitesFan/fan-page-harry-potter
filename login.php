@@ -91,7 +91,7 @@ if (isset($_POST['submit'])) {
                 </div>
                 <div class="form-input">
                     <label class="<?php echo $theme === 'dark' ? 'light-gray' : 'dark-gray'; ?>" for=""><?php echo $lang['forms'][1]['label']; ?></label>
-                    <input class="<?php echo $theme === 'dark' ? 'light-gray-bg' : 'dark-gray-bg'; ?>" type="text" name="password">
+                    <input class="<?php echo $theme === 'dark' ? 'light-gray-bg' : 'dark-gray-bg'; ?>" type="password" name="password">
                 </div>
                 <button class="button submit-btn accent-bg white" type="submit" name="submit"><?php echo $lang['signUp'] ?></button>
 
