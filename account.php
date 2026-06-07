@@ -101,6 +101,12 @@ $user = userAccount::fromSession();
 
 ?>
 
+<?php
+$editing = isset($_GET['editProfile']);
+$feedback_key = $_GET['msg'] ?? '';
+$feedback_type = $_GET['type'] ?? '';
+?>
+
 
 <!DOCTYPE html>
 <html>
@@ -150,20 +156,47 @@ $user = userAccount::fromSession();
             <p class="<?php echo $theme === 'dark' ? 'light-gray' : 'dark-gray'; ?>"><?php echo $lang['p'] ?></p>
         </div>
         <div class="profile <?php echo $theme === 'dark' ? 'white-bg' : 'black-bg'; ?>">
-            <div class="profile-details">
-                <div class="profile-details-row">
-                    <h5 class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>"><?php echo $lang['username'] ?></h5>
-                    <p class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>"><?php echo $user->getUsername(); ?></p>
+            <?php if (!$editing): ?>
+                <div class="profile-details">
+                    <div class="profile-details-row">
+                        <h5 class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>"><?php echo $lang['username'] ?></h5>
+                        <p class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>"><?php echo $user->getUsername(); ?></p>
+                    </div>
+                    <div class="profile-details-row">
+                        <h5 class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>"><?php echo $lang['email'] ?></h5>
+                        <p class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>"><?php echo $user->getEmail(); ?></p>
+                    </div>
                 </div>
-                <div class="profile-details-row">
-                    <h5 class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>"><?php echo $lang['email'] ?></h5>
-                    <p class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>"><?php echo $user->getEmail(); ?></p>
+                <div class="profile-buttons">
+                    <a class="button sign-up-btn white accent-bg" href="?editProfile"><?php echo $lang['edit'] ?></a>
+                    <a class="button log-in-btn accent" href="?logout"><?php echo $lang['logout'] ?></a>
                 </div>
-            </div>
-            <div class="profile-buttons">
-                <a class="button sign-up-btn white accent-bg"><?php echo $lang['edit'] ?></a>
-                <a class="button log-in-btn accent" href="?logout"><?php echo $lang['logout'] ?></a>
-            </div>
+            <?php else: ?>
+                <?php if ($feedback_key): ?>
+                    <?php $feedback = $lang[$feedback_key] ?? $feedback_key; ?>
+                    <p class="<?php echo $feedback_type === 'success' ? 'slytherin' : 'accent'; ?>"><?php echo htmlspecialchars($feedback); ?></p>
+                <?php endif; ?>
+                <form method="post" action="php/update_profile.php" class="profile-details">
+                    <div class="profile-details">
+                        <div class="profile-details-row">
+                            <h5 class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>"><?php echo $lang['username'] ?? 'Username' ?></h5>
+                            <div class="form-input">
+                                <input class="<?php echo $theme === 'dark' ? 'dark-gray-bg' : 'light-gray-bg'; ?>" name="username" value="<?php echo htmlspecialchars($user->getUsername()); ?>" required>
+                            </div>
+                        </div>
+                        <div class="profile-details-row">
+                            <h5 class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>"><?php echo $lang['email'] ?? 'Email' ?></h5>
+                            <div class="form-input">
+                                <input class="<?php echo $theme === 'dark' ? 'dark-gray-bg' : 'light-gray-bg'; ?>" name="email" type="email" value="<?php echo htmlspecialchars($user->getEmail()); ?>" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile-buttons">
+                        <button type="submit" class="button sign-up-btn white accent-bg"><?php echo $lang['save'] ?? 'Save' ?></button>
+                        <a class="button log-in-btn accent" href="account.php"><?php echo $lang['cancel'] ?? 'Cancel' ?></a>
+                    </div>
+                </form>
+            <?php endif; ?>
         </div>
 
     </section>
@@ -184,3 +217,18 @@ $user = userAccount::fromSession();
 </body>
 
 </html>
+
+<style>
+    <?php echo $theme === 'dark' ? '
+        .form-input input {
+            color: #f8f8f8;
+        }
+        .form-input input:focus {
+             color: #f8f8f8;
+        }' : '.form-input input {
+            color: #0d0000;
+        }
+        .form-input input:focus {
+            color: #0d0000;
+        }'; ?>
+</style>
