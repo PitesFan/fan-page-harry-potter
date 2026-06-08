@@ -198,10 +198,40 @@ $feedback_type = $_GET['type'] ?? '';
                 </form>
             <?php endif; ?>
         </div>
-
     </section>
+    <section class="section section-margin">
+        <h2 class="<?php echo $theme === 'dark' ? 'white' : 'dark'; ?>"><?php echo $lang['h2-posts'] ?></h2>
 
-    <section>
+        <div class="posts-grid">
+            <div class="post <?php echo $theme === 'dark' ? 'white-bg' : 'black-bg'; ?>">
+                <img class="post-img" src="images/post-img-test.jpg" alt="">
+                <h4 class="post-title <?php echo $theme === 'dark' ? 'black' : 'white'; ?>">The Art of Spells ⚡</h4>
+                <p class="post-description <?php echo $theme === 'dark' ? 'dark-gray' : 'light-gray'; ?>">A quick guide to mastering basic spells in the wizarding world.</p>
+                <img class="post-img-hover" src="images/post-hover-img.png" alt="">
+                <a class="post-btn-hover button accent-bg white" href=" register.php" class="button sign-up-btn accent-bg white">Read more</a>
+            </div>
+            <div class="post <?php echo $theme === 'dark' ? 'white-bg' : 'black-bg'; ?>">
+                <img class="post-img" src="images/post-img-test.jpg" alt="">
+                <h4 class="post-title <?php echo $theme === 'dark' ? 'black' : 'white'; ?>">The Art of Spells ⚡</h4>
+                <p class="post-description <?php echo $theme === 'dark' ? 'dark-gray' : 'light-gray'; ?>">A quick guide to mastering basic spells in the wizarding world.</p>
+                <img class="post-img-hover" src="images/post-hover-img.png" alt="">
+                <a class="post-btn-hover button accent-bg white" href=" register.php" class="button sign-up-btn accent-bg white">Read more</a>
+            </div>
+            <div class="post <?php echo $theme === 'dark' ? 'white-bg' : 'black-bg'; ?>">
+                <img class="post-img" src="images/post-img-test.jpg" alt="">
+                <h4 class="post-title <?php echo $theme === 'dark' ? 'black' : 'white'; ?>">The Art of Spells ⚡</h4>
+                <p class="post-description <?php echo $theme === 'dark' ? 'dark-gray' : 'light-gray'; ?>">A quick guide to mastering basic spells in the wizarding world.</p>
+                <img class="post-img-hover" src="images/post-hover-img.png" alt="">
+                <a class="post-btn-hover button accent-bg white" href=" register.php" class="button sign-up-btn accent-bg white">Read more</a>
+            </div>
+            <div class="post <?php echo $theme === 'dark' ? 'white-bg' : 'black-bg'; ?>">
+                <img class="post-img" src="images/post-img-test.jpg" alt="">
+                <h4 class="post-title <?php echo $theme === 'dark' ? 'black' : 'white'; ?>">The Art of Spells ⚡</h4>
+                <p class="post-description <?php echo $theme === 'dark' ? 'dark-gray' : 'light-gray'; ?>">A quick guide to mastering basic spells in the wizarding world.</p>
+                <img class="post-img-hover" src="images/post-hover-img.png" alt="">
+                <a class="post-btn-hover button accent-bg white" href=" register.php" class="button sign-up-btn accent-bg white">Read more</a>
+            </div>
+        </div>
 
     </section>
 

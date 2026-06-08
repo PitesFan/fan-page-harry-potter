@@ -2,6 +2,7 @@
 
 $lang = [
     'h2' => 'Your profile',
+    'h2-posts' => 'Community Posts ✨',
     'p' => 'Welcome back, wizard! 🪄',
     'navLinks' => [
         ['label' => 'Home', 'url' => 'index.php'],
