@@ -12,7 +12,7 @@ if (!in_array($selected_lang, $allowed_langs)) {
 
 $_SESSION['lang'] = $selected_lang;
 
-require_once "data/{$selected_lang}/community.php";
+require_once "data/{$selected_lang}/news.php";
 
 $theme = [];
 $allowed_themes = ['dark', 'light'];
@@ -84,53 +84,18 @@ $next_theme = $theme === 'dark' ? 'light' : 'dark';
     </section>
 
     <section class="section section-margin" id="posts">
-        <div class="badges">
-            <a href="#posts" class="badge griffindor-badge"><?php echo $lang['badges'][0]['label']; ?></a>
-            <a href="#quizzes" class="badge hufflepuff-bg white"><?php echo $lang['badges'][1]['label']; ?></a>
-            <a href="#facts" class="badge ravenclaw-bg white"><?php echo $lang['badges'][2]['label']; ?></a>
-            <a href="#encyclopedia" class="badge slytherin-bg white"><?php echo $lang['badges'][3]['label']; ?></a>
-        </div>
-        <div class="community-section section">
-            <div class="community-texts">
+        <div class="news-section section">
+            <div class="news-texts">
                 <h2 class="<?php echo $theme === 'dark' ? 'white' : 'dark'; ?>"><?php echo $lang['h2-posts'] ?></h2>
                 <p class="<?php echo $theme === 'dark' ? 'light-gray' : 'dark-gray'; ?>"><?php echo $lang['p-posts'] ?></p>
             </div>
-
             <div class="posts-grid">
                 <div class="post <?php echo $theme === 'dark' ? 'white-bg' : 'black-bg'; ?>">
                     <img class="post-img" src="images/post-img-test.jpg" alt="">
                     <h4 class="post-title <?php echo $theme === 'dark' ? 'black' : 'white'; ?>">The Art of Spells ⚡</h4>
                     <p class="post-description <?php echo $theme === 'dark' ? 'dark-gray' : 'light-gray'; ?>">A quick guide to mastering basic spells in the wizarding world.</p>
-                    <img class="post-img-hover" src="images/post-hover-img.png" alt="">
-                    <a class="post-btn-hover button accent-bg white" href=" register.php" class="button sign-up-btn accent-bg white">Read more</a>
-                </div>
-                <div class="post <?php echo $theme === 'dark' ? 'white-bg' : 'black-bg'; ?>">
-                    <img class="post-img" src="images/post-img-test.jpg" alt="">
-                    <h4 class="post-title <?php echo $theme === 'dark' ? 'black' : 'white'; ?>">The Art of Spells ⚡</h4>
-                    <p class="post-description <?php echo $theme === 'dark' ? 'dark-gray' : 'light-gray'; ?>">A quick guide to mastering basic spells in the wizarding world.</p>
-                    <img class="post-img-hover" src="images/post-hover-img.png" alt="">
-                    <a class="post-btn-hover button accent-bg white" href=" register.php" class="button sign-up-btn accent-bg white">Read more</a>
-                </div>
-                <div class="post <?php echo $theme === 'dark' ? 'white-bg' : 'black-bg'; ?>">
-                    <img class="post-img" src="images/post-img-test.jpg" alt="">
-                    <h4 class="post-title <?php echo $theme === 'dark' ? 'black' : 'white'; ?>">The Art of Spells ⚡</h4>
-                    <p class="post-description <?php echo $theme === 'dark' ? 'dark-gray' : 'light-gray'; ?>">A quick guide to mastering basic spells in the wizarding world.</p>
-                    <img class="post-img-hover" src="images/post-hover-img.png" alt="">
-                    <a class="post-btn-hover button accent-bg white" href=" register.php" class="button sign-up-btn accent-bg white">Read more</a>
-                </div>
-                <div class="post <?php echo $theme === 'dark' ? 'white-bg' : 'black-bg'; ?>">
-                    <img class="post-img" src="images/post-img-test.jpg" alt="">
-                    <h4 class="post-title <?php echo $theme === 'dark' ? 'black' : 'white'; ?>">The Art of Spells ⚡</h4>
-                    <p class="post-description <?php echo $theme === 'dark' ? 'dark-gray' : 'light-gray'; ?>">A quick guide to mastering basic spells in the wizarding world.</p>
-                    <img class="post-img-hover" src="images/post-hover-img.png" alt="">
-                    <a class="post-btn-hover button accent-bg white" href=" register.php" class="button sign-up-btn accent-bg white">Read more</a>
                 </div>
             </div>
-            <div class="community-button">
-                <a href="register.php" class="button sign-up-btn accent-bg white"><?php echo $lang['seeAll'] ?></a>
-            </div>
-
-
         </div>
 
     </section>
@@ -142,6 +107,7 @@ $next_theme = $theme === 'dark' ? 'light' : 'dark';
         </div>
     </section>
 
+    <script src="js/newsapi-posts.js"></script>
 </body>
 
 </html>

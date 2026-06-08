@@ -2,11 +2,11 @@
 
 $lang = [
     'h1' => 'Enter the Harry Potter World⚡',
-    'p' => 'Discover magic, spells, and your Hogwarts house.',
+    'p' => 'Discover more about this universe.',
     'navLinks' => [
         ['label' => 'Home', 'url' => 'index.php'],
         ['label' => 'About', 'url' => 'about.php'],
-        ['label' => 'Community', 'url' => 'community.php'],
+        ['label' => 'News', 'url' => 'news.php'],
         ['label' => 'Contact', 'url' => 'contact.php']
     ],
     'logIn' => 'Log in',

@@ -1,18 +1,15 @@
 <?php
 
 $lang = [
-    'h2' => 'Înregistrare',
+
     'navLinks' => [
         ['label' => 'Acasă', 'url' => 'index.php'],
         ['label' => 'Despre', 'url' => 'about.php'],
         ['label' => 'Noutăți', 'url' => 'news.php'],
         ['label' => 'Contact', 'url' => 'contact.php']
     ],
-    'forms' => [
-        ['label' => 'Nume'],
-        ['label' => 'Email'],
-        ['label' => 'Parolă']
-    ],
+    'h2-posts' => 'Noutăți Harry Potter',
+    'p-posts' => 'Citeste cele mai populare noutăți despre Harry Potter, filme si lumea vrajitorilor.',
     'logIn' => 'Autentificare',
     'signUp' => 'Înregistrare',
     'langImg' => 'images/en.svg',

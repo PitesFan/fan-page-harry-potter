@@ -1,21 +1,21 @@
 <?php
 
 $lang = [
-    'h2-about' => 'Despre Website ⚡',
+    'h2-about' => 'Despre Website',
     'navLinks' => [
-        ['label' => 'Acasă', 'url' => 'index.php'],
+        ['label' => 'Acasa', 'url' => 'index.php'],
         ['label' => 'Despre', 'url' => 'about.php'],
-        ['label' => 'Comunitate', 'url' => 'community.php'],
+        ['label' => 'Noutăți', 'url' => 'news.php'],
         ['label' => 'Contact', 'url' => 'contact.php']
     ],
     'cards' => [
-        ['label' => 'Acest site web a fost creat pentru a aduce magia universului Harry Potter mai aproape de fani. 🏰'],
-        ['label' => 'Utilizatorii pot crea postări ✍️, își pot împărtăși ideile și pot explora vrăji, personaje și case de la Hogwarts.'],
-        ['label' => 'Poți face un test distractiv 🧠 pentru a-ți descoperi casa de la Hogwarts și a-ți testa cunoștințele.'],
-        ['label' => 'Ai o idee? Trimite sugestii prin formularul de contact 💌 și ajută la îmbunătățirea experienței.']
+        ['label' => 'Acest site aduce universul Harry Potter mai aproape printr-o experiență simplă pentru fani.'],
+        ['label' => 'Pagina Noutăți încarcă articole populare și actualizări despre filmele Harry Potter prin NewsAPI.'],
+        ['label' => 'Vizitatorii se pot înregistra, autentifica și își pot edita datele din pagina de profil.'],
+        ['label' => 'Site-ul include temă închisă și deschisă, schimbare de limbă și formular de contact pentru mesaje.']
     ],
     'logIn' => 'Autentificare',
-    'signUp' => 'Înregistrare',
+    'signUp' => 'Inregistrare',
     'langImg' => 'images/en.svg',
     'switchLang' => 'en',
     'langAlt' => 'Schimba in engleza'

@@ -2,11 +2,11 @@
 
 $lang = [
     'h1' => 'Intră în lumea Harry Potter⚡',
-    'p' => 'Descoperă magie, vrăji și casa ta de la Hogwarts.',
+    'p' => 'Descoperă mai multe despre acest univers.',
     'navLinks' => [
         ['label' => 'Acasă', 'url' => 'index.php'],
         ['label' => 'Despre', 'url' => 'about.php'],
-        ['label' => 'Comunitate', 'url' => 'community.php'],
+        ['label' => 'Noutăți', 'url' => 'news.php'],
         ['label' => 'Contact', 'url' => 'contact.php']
     ],
     'logIn' => 'Autentificare',

@@ -5,7 +5,7 @@ $lang = [
     'navLinks' => [
         ['label' => 'Acasă', 'url' => 'index.php'],
         ['label' => 'Despre', 'url' => 'about.php'],
-        ['label' => 'Comunitate', 'url' => 'community.php'],
+        ['label' => 'Noutăți', 'url' => 'news.php'],
         ['label' => 'Contact', 'url' => 'contact.php']
     ],
     'forms' => [

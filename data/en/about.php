@@ -1,18 +1,18 @@
 <?php
 
 $lang = [
-    'h2-about' => 'About the Website ⚡',
+    'h2-about' => 'About the Website',
     'navLinks' => [
         ['label' => 'Home', 'url' => 'index.php'],
         ['label' => 'About', 'url' => 'about.php'],
-        ['label' => 'Community', 'url' => 'community.php'],
+        ['label' => 'News', 'url' => 'news.php'],
         ['label' => 'Contact', 'url' => 'contact.php']
     ],
     'cards' => [
-        ['label' => 'This website was created to bring the magic of the Harry Potter universe closer to fans. 🏰'],
-        ['label' => 'Users can create posts ✍️, share their ideas, and explore spells, characters, and Hogwarts houses.'],
-        ['label' => 'You can also take a fun quiz 🧠 to discover your Hogwarts house and test your knowledge.'],
-        ['label' => 'Have an idea? Send suggestions through the contact form 💌 and help improve the experience.']
+        ['label' => 'This website brings the Harry Potter universe closer through a simple fan experience.'],
+        ['label' => 'The News page loads popular Harry Potter stories and movie updates from NewsAPI.'],
+        ['label' => 'Visitors can register, log in, and edit their account details from the profile page.'],
+        ['label' => 'The site includes dark and light themes, language switching, and a contact form for messages.']
     ],
     'logIn' => 'Log in',
     'signUp' => 'Sign up',

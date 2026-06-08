@@ -2,12 +2,12 @@
 
 $lang = [
     'h2' => 'Your profile',
-    'h2-posts' => 'Community Posts ✨',
+    'h2-posts' => 'Harry Potter News',
     'p' => 'Welcome back, wizard! 🪄',
     'navLinks' => [
         ['label' => 'Home', 'url' => 'index.php'],
         ['label' => 'About', 'url' => 'about.php'],
-        ['label' => 'Community', 'url' => 'community.php'],
+        ['label' => 'News', 'url' => 'news.php'],
         ['label' => 'Contact', 'url' => 'contact.php']
     ],
     'username' => 'Username:',
