@@ -42,6 +42,16 @@ class RegisterUser
                 $this->error = "All fields are required";
             }
             return false;
+        }
+
+        // password minimum length validation
+        if (mb_strlen($this->raw_password) < 8) {
+            if ($this->userLang == 'ro') {
+                $this->error = "Parola trebuie să aibă cel puțin 8 caractere";
+            } else {
+                $this->error = "Password must be at least 8 characters";
+            }
+            return false;
         } else {
             return true;
         }
