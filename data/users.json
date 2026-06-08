@@ -1,12 +1,7 @@
 [
-    {
-        "username": "PitesFan",
-        "email": "pitesfan@gmail.com",
-        "password": "$2y$10$h.K3007QFw4z35pSbqy5gera5l2vU8E8WEbCqKKjhJmKmaYpv2.Oa"
-    },
-    {
-        "username": "123",
-        "email": "123@email.com",
-        "password": "$2y$10$0a6OyJ92mPrkyejx4D2X8.SDKP9kbWk50UBghmPu2gZ.rGEzBDz.u"
-    }
+  {
+    "username": "PitesFan",
+    "email": "pitesfan@gmail.com",
+    "password": "$2y$10$h.K3007QFw4z35pSbqy5gera5l2vU8E8WEbCqKKjhJmKmaYpv2.Oa"
+  }
 ]

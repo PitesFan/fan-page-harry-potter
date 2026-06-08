@@ -17,6 +17,7 @@ h4 {
 
 label,
 input,
+textarea,
 h5,
 h6,
 p,
@@ -73,7 +74,8 @@ p {
 }
 
 .button,
-input {
+input,
+textarea {
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
@@ -158,9 +160,14 @@ input {
 }
 
 .log-in-btn,
-.sign-up-btn {
+.sign-up-btn,
+.contact-btn {
   padding: 12px 36px;
   align-items: center;
+}
+
+.contact-btn {
+  width: fit-content;
 }
 
 .log-in-btn {

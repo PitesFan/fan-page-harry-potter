@@ -100,9 +100,7 @@ if (isset($_POST['submit'])) {
                 </div>
                 <button class="button submit-btn accent-bg white" type="submit" name="submit"><?php echo $lang['signUp'] ?></button>
 
-                <p class="accent"><?php echo @$user->error ?></p>
-
-                <p class="slytherin"><?php echo @$user->success ?></p>
+                <p class="<?php echo !empty($user?->error) ? 'accent' : 'slytherin'; ?>"><?php echo htmlspecialchars($user?->error ?? $user?->success ?? ''); ?></p>
 
             </form>
 
