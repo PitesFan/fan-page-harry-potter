@@ -67,7 +67,8 @@ label {
   line-height: 155%;
 }
 
-p {
+p,
+a {
   font-size: 18px;
   font-style: normal;
   font-weight: 400;

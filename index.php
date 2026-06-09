@@ -31,6 +31,8 @@ $next_theme = $theme === 'dark' ? 'light' : 'dark';
 <html>
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/desktop.css">
     <link rel="stylesheet" href="css/adaptive.css">
@@ -38,7 +40,56 @@ $next_theme = $theme === 'dark' ? 'light' : 'dark';
 
 <body class="<?php echo $theme === 'dark' ? 'black-bg' : 'white-bg'; ?>">
     <section class="hero-section">
+        <div class="header-adaptive <?php echo $theme === 'dark' ? 'white-bg' : 'black-bg'; ?>">
+            <div class="header-up">
+                <a class="logo white-bg " href="index.php"><img class="logo white-bg " src=" <?php echo $logo; ?> "></a>
+                <a id="header-btn">
+                    <img src="images/menu.svg">
+                </a>
+            </div>
+            <div id="header-down">
+                <ul class="nav-links">
+                    <li>
+                        <a class="accent" href="<?php echo $lang['navLinks'][0]['url']; ?>"><?php echo $lang['navLinks'][0]['label']; ?></a>
+                    </li>
+                    <li>
+                        <a class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>" href="<?php echo $lang['navLinks'][1]['url']; ?>"><?php echo $lang['navLinks'][1]['label']; ?></a>
+                    </li>
+                    <li>
+                        <a class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>" href="<?php echo $lang['navLinks'][2]['url']; ?>"><?php echo $lang['navLinks'][2]['label']; ?></a>
+                    </li>
+                    <li>
+                        <a class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>" href="<?php echo $lang['navLinks'][3]['url']; ?>"><?php echo $lang['navLinks'][3]['label']; ?></a>
+                    </li>
+                </ul>
+                <?php if (isset($_SESSION['user'])) { ?> <div class="header-buttons">
+                        <a href="account.php" class="button profile-btn <?php echo $theme === 'dark' ? 'black-bg' : 'white-bg'; ?>"><img src="<?php echo $theme === 'dark' ? 'images/profile-icon.svg' : 'images/profile-icon-black.svg'; ?>" alt=""></a>
+                        <a class="button theme-btn <?php echo $theme === 'dark' ? 'black-bg' : 'white-bg'; ?>" href="?theme=<?php echo $next_theme; ?>"><?php if ($theme == 'dark') {
+                                                                                                                                                            echo '☀️';
+                                                                                                                                                        } else {
+                                                                                                                                                            echo '🌑';
+                                                                                                                                                        } ?></a>
+                        <a class="lang-btn" href="?lang=<?php echo $lang['switchLang']; ?>">
+                            <img src="<?php echo $lang['langImg'] ?>" alt="<?php echo $lang['langAlt'] ?>">
+                        </a>
+                    </div>
+                <?php } else { ?>
+                    <div class="header-buttons">
+                        <a href="login.php" class="button log-in-btn accent"><?php echo $lang['logIn'] ?></a>
+                        <a href="register.php" class="button sign-up-btn accent-bg white"><?php echo $lang['signUp'] ?></a>
+                        <a class="button theme-btn <?php echo $theme === 'dark' ? 'black-bg' : 'white-bg'; ?>" href="?theme=<?php echo $next_theme; ?>"><?php if ($theme == 'dark') {
+                                                                                                                                                            echo '☀️';
+                                                                                                                                                        } else {
+                                                                                                                                                            echo '🌑';
+                                                                                                                                                        } ?></a>
+                        <a class="lang-btn" href="?lang=<?php echo $lang['switchLang']; ?>">
+                            <img src="<?php echo $lang['langImg'] ?>" alt="<?php echo $lang['langAlt'] ?>">
+                        </a>
+                    </div> <?php } ?>
+            </div>
+        </div>
         <div class="header <?php echo $theme === 'dark' ? 'white-bg' : 'black-bg'; ?>">
+
             <a class="logo white-bg " href="index.php"><img class="logo white-bg " src=" <?php echo $logo; ?> "></a>
 
             <ul class="nav-links">
@@ -92,6 +143,8 @@ $next_theme = $theme === 'dark' ? 'light' : 'dark';
         </div>
 
     </section>
+
+    <script src="js/main.js"></script>
 
 </body>
 
