@@ -155,8 +155,8 @@ $info_labels = [
             <div class="posts-grid" id="books-grid">
                 <div class="post <?php echo $theme === 'dark' ? 'white-bg' : 'black-bg'; ?>">
                     <img class="post-img" src="images/post-img-test.jpg" alt="">
-                    <h4 class="post-title <?php echo $theme === 'dark' ? 'black' : 'white'; ?>">Loading books...</h4>
-                    <p class="post-description <?php echo $theme === 'dark' ? 'dark-gray' : 'light-gray'; ?>">Fetching the wizarding world from the PotterDB API.</p>
+                    <h4 class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>">Loading books...</h4>
+                    <p class="<?php echo $theme === 'dark' ? 'dark-gray' : 'light-gray'; ?>">Fetching the wizarding world from the PotterDB API.</p>
                 </div>
             </div>
 
@@ -164,8 +164,8 @@ $info_labels = [
             <div class="posts-grid" id="movies-grid">
                 <div class="post <?php echo $theme === 'dark' ? 'white-bg' : 'black-bg'; ?>">
                     <img class="post-img" src="images/post-img-test.jpg" alt="">
-                    <h4 class="post-title <?php echo $theme === 'dark' ? 'black' : 'white'; ?>">Loading movies...</h4>
-                    <p class="post-description <?php echo $theme === 'dark' ? 'dark-gray' : 'light-gray'; ?>">Fetching the wizarding world from the PotterDB API.</p>
+                    <h4 class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>">Loading movies...</h4>
+                    <p class="<?php echo $theme === 'dark' ? 'dark-gray' : 'light-gray'; ?>">Fetching the wizarding world from the PotterDB API.</p>
                 </div>
             </div>
         </div>

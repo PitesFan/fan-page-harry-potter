@@ -94,15 +94,15 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const badge = document.createElement("span");
-    badge.className = `post-badge ${badgeClass}`;
+    badge.className = badgeClass;
     badge.textContent = badgeLabel;
 
     const titleEl = document.createElement("h4");
-    titleEl.className = `post-title ${titleClass}`;
+    titleEl.className = titleClass;
     titleEl.textContent = title;
 
     const descriptionEl = document.createElement("p");
-    descriptionEl.className = `post-description ${descriptionClass}`;
+    descriptionEl.className = descriptionClass;
     descriptionEl.style.whiteSpace = "pre-line";
     descriptionEl.textContent = description;
 
@@ -116,11 +116,11 @@ document.addEventListener("DOMContentLoaded", () => {
     fallback.className = `post ${postBgClass}`;
 
     const title = document.createElement("h4");
-    title.className = `post-title ${titleClass}`;
+    title.className = titleClass;
     title.textContent = titleText;
 
     const description = document.createElement("p");
-    description.className = `post-description ${descriptionClass}`;
+    description.className = descriptionClass;
     description.textContent =
       "Please check your connection and try again later.";
 

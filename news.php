@@ -25,6 +25,8 @@ $_SESSION['theme'] = $selected_theme;
 $theme = $selected_theme;
 $next_theme = $theme === 'dark' ? 'light' : 'dark';
 
+$user_posts_lang = $lang['userPosts'] ?? [];
+
 ?>
 
 <!DOCTYPE html>
@@ -139,6 +141,25 @@ $next_theme = $theme === 'dark' ? 'light' : 'dark';
 
     </section>
 
+    <section class="section section-margin" id="user-posts">
+        <div class="news-section section">
+            <div class="news-texts">
+                <h2 class="<?php echo $theme === 'dark' ? 'white' : 'dark'; ?>"><?php echo $lang['h2-user-posts']; ?></h2>
+                <p class="<?php echo $theme === 'dark' ? 'light-gray' : 'dark-gray'; ?>"><?php echo $lang['p-user-posts']; ?></p>
+            </div>
+            <div class="posts-grid" data-user-posts-grid
+                data-logged-in="<?php echo isset($_SESSION['user']) ? '1' : '0'; ?>"
+                data-current-user="<?php echo htmlspecialchars($_SESSION['user'] ?? '', ENT_QUOTES, 'UTF-8'); ?>">
+                <div class="post <?php echo $theme === 'dark' ? 'white-bg' : 'black-bg'; ?>">
+                    <img class="post-img" src="images/post-img-test.jpg" alt="">
+                    <h4 class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>">Loading community posts...</h4>
+                    <p class="<?php echo $theme === 'dark' ? 'dark-gray' : 'light-gray'; ?>">Fetching posts shared by the wizarding community.</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
     <section class="section section-margin" id="posts">
         <div class="news-section section">
             <div class="news-texts">
@@ -148,8 +169,8 @@ $next_theme = $theme === 'dark' ? 'light' : 'dark';
             <div class="posts-grid">
                 <div class="post <?php echo $theme === 'dark' ? 'white-bg' : 'black-bg'; ?>">
                     <img class="post-img" src="images/post-img-test.jpg" alt="">
-                    <h4 class="post-title <?php echo $theme === 'dark' ? 'black' : 'white'; ?>">The Art of Spells ⚡</h4>
-                    <p class="post-description <?php echo $theme === 'dark' ? 'dark-gray' : 'light-gray'; ?>">A quick guide to mastering basic spells in the wizarding world.</p>
+                    <h4 class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>">The Art of Spells ⚡</h4>
+                    <p class="<?php echo $theme === 'dark' ? 'dark-gray' : 'light-gray'; ?>">A quick guide to mastering basic spells in the wizarding world.</p>
                 </div>
             </div>
         </div>
@@ -163,6 +184,10 @@ $next_theme = $theme === 'dark' ? 'light' : 'dark';
         </div>
     </section>
 
+    <script>
+        window.userPostsLang = <?php echo json_encode($user_posts_lang, JSON_UNESCAPED_UNICODE); ?>;
+    </script>
+    <script src="js/user-posts.js"></script>
     <script src="js/newsapi-posts.js"></script>
     <script src="js/main.js"></script>
 </body>

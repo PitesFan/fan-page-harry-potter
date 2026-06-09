@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const postsGrid = document.querySelector(".posts-grid");
+  const postsGrid = document.querySelector(
+    ".posts-grid:not([data-user-posts-grid])",
+  );
 
   if (!postsGrid) {
     return;
@@ -28,11 +30,11 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const title = document.createElement("h4");
-    title.className = `post-title ${titleClass}`;
+    title.className = titleClass;
     title.textContent = article.title || "Harry Potter news";
 
     const description = document.createElement("p");
-    description.className = `post-description ${descriptionClass}`;
+    description.className = descriptionClass;
     description.textContent =
       article.description ||
       article.content ||

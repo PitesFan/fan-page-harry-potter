@@ -217,6 +217,16 @@ textarea {
   margin-top: 20px;
 }
 
+.file-input-wrapper input[type="file"] {
+  display: none;
+}
+
+.posts-grid:not(#books-grid):not(#movies-grid) .post-img,
+[data-user-posts-grid] .post-img {
+  max-height: 240px;
+  object-fit: cover;
+}
+
 .profile-btn {
   display: flex;
   justify-content: center;

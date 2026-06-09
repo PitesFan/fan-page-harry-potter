@@ -25,6 +25,8 @@ $_SESSION['theme'] = $selected_theme;
 $theme = $selected_theme;
 $next_theme = $theme === 'dark' ? 'light' : 'dark';
 
+$user_posts_lang = $lang['userPosts'] ?? [];
+
 ?>
 
 <?php
@@ -243,6 +245,44 @@ $feedback_type = $_GET['type'] ?? '';
         </div>
     </section>
 
+    <section class="section section-margin profile-section" id="my-posts">
+        <div class="section-texts-profile">
+            <h2 class="<?php echo $theme === 'dark' ? 'white' : 'dark'; ?>"><?php echo $lang['h2-my-posts'] ?? 'Your magical posts'; ?></h2>
+            <p class="<?php echo $theme === 'dark' ? 'light-gray' : 'dark-gray'; ?>"><?php echo $lang['p-my-posts'] ?? 'Share stories, ideas and spells with the wizarding world.'; ?></p>
+        </div>
+
+        <div class="profile <?php echo $theme === 'dark' ? 'white-bg' : 'black-bg'; ?>">
+            <form class="form-post" data-create-post-form enctype="multipart/form-data">
+                <div class="form-input">
+                    <label class="<?php echo $theme === 'dark' ? 'dark-gray' : 'light-gray'; ?>" for="post-title"><?php echo $lang['postTitle'] ?? 'Post title'; ?></label>
+                    <input class="<?php echo $theme === 'dark' ? 'dark-gray-bg' : 'light-gray-bg'; ?>" id="post-title" name="title" type="text" maxlength="120" required>
+                </div>
+                <div class="post-textarea">
+                    <label class="<?php echo $theme === 'dark' ? 'dark-gray' : 'light-gray'; ?>" for="post-description"><?php echo $lang['postDescription'] ?? 'Description'; ?></label>
+                    <textarea class="<?php echo $theme === 'dark' ? 'dark-gray-bg' : 'light-gray-bg'; ?>" id="post-description" name="description" rows="4" maxlength="1000" required></textarea>
+                </div>
+                <div class="post-btn-file">
+                    <label class="<?php echo $theme === 'dark' ? 'dark-gray' : 'light-gray'; ?>" for="post-cover"><?php echo $lang['postCover'] ?? 'Cover image'; ?></label>
+                    <div class="file-input-wrapper post-btn-file">
+                        <input id="post-cover" name="cover" type="file" accept="image/png, image/jpeg, image/gif, image/webp" required>
+                        <label class="button log-in-btn accent" for="post-cover" data-file-label><?php echo $lang['chooseFile'] ?? 'Choose a cover image'; ?></label>
+                    </div>
+                </div>
+                <p data-post-feedback></p>
+                <div class="profile-buttons">
+                    <button type="submit" class="button sign-up-btn white accent-bg"><?php echo $lang['publish'] ?? 'Publish post'; ?></button>
+                </div>
+            </form>
+        </div>
+
+        <div class="news-section section">
+            <div class="posts-grid" data-user-posts-grid
+                data-logged-in="1"
+                data-current-user="<?php echo htmlspecialchars($_SESSION['user'] ?? '', ENT_QUOTES, 'UTF-8'); ?>">
+            </div>
+        </div>
+    </section>
+
     <section class="section">
         <div class="footer  <?php echo $theme === 'dark' ? 'white-bg' : 'black-bg'; ?>">
             <a class="logo white-bg" href="index.php"><img class="logo white-bg" src=" <?php echo $logo; ?> "></a>
@@ -252,18 +292,26 @@ $feedback_type = $_GET['type'] ?? '';
 
     <style>
         <?php echo $theme === 'dark' ? '
-        .form-input input {
+        .form-input input,
+        .form-input textarea {
             color: #f8f8f8;
         }
-        .form-input input:focus {
+        .form-input input:focus,
+        .form-input textarea:focus {
              color: #f8f8f8;
-        }' : '.form-input input {
+        }' : '.form-input input,
+        .form-input textarea {
             color: #0d0000;
         }
-        .form-input input:focus {
+        .form-input input:focus,
+        .form-input textarea:focus {
             color: #0d0000;
         }'; ?>
     </style>
+    <script>
+        window.userPostsLang = <?php echo json_encode($user_posts_lang, JSON_UNESCAPED_UNICODE); ?>;
+    </script>
+    <script src="js/account-posts.js"></script>
     <script src="js/main.js"></script>
 
 </body>

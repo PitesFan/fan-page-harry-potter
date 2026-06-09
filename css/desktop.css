@@ -338,6 +338,34 @@
   box-sizing: border-box;
 }
 
+.post-textarea {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  row-gap: 12px;
+}
+
+.post-textarea textarea {
+  width: 100%;
+  border-radius: 12px;
+  border: none;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.form-post {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+.post-btn-file {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  width: fit-content;
+}
+
 /* News styles */
 .news-button {
   grid-column: 1/13;
