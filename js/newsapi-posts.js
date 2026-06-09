@@ -5,17 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  const apiKey = "5f8e89b31b964141b026977260901ebf";
-  const endpoint = new URL("https://newsapi.org/v2/everything");
-
-  endpoint.search = new URLSearchParams({
-    q: '"Harry Potter movies"',
-    language: "en",
-    sortBy: "popularity",
-    pageSize: "15",
-    apiKey,
-  }).toString();
-
   const firstPost = postsGrid.querySelector(".post");
   const isDarkTheme = firstPost?.classList.contains("white-bg") ?? true;
   const postBgClass = isDarkTheme ? "white-bg" : "black-bg";
@@ -54,13 +43,58 @@ document.addEventListener("DOMContentLoaded", () => {
     return post;
   };
 
-  fetch(endpoint)
-    .then((response) => {
+  const parseEnv = (text) => {
+    const env = {};
+    text.split(/\r?\n/).forEach((line) => {
+      const trimmed = line.trim();
+      if (!trimmed || trimmed.startsWith("#")) return;
+      const eq = trimmed.indexOf("=");
+      if (eq === -1) return;
+      const key = trimmed.slice(0, eq).trim();
+      const value = trimmed
+        .slice(eq + 1)
+        .trim()
+        .replace(/^['"]|['"]$/g, "");
+      env[key] = value;
+    });
+    return env;
+  };
+
+  const loadApiKey = () =>
+    fetch("js/.env", { cache: "no-store" })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to load .env");
+        }
+        return response.text();
+      })
+      .then((text) => parseEnv(text))
+      .then((env) => env.API_KEY);
+
+  const fetchPosts = (apiKey) => {
+    const endpoint = new URL("https://newsapi.org/v2/everything");
+    endpoint.search = new URLSearchParams({
+      q: '"Harry Potter movies"',
+      language: "en",
+      sortBy: "popularity",
+      pageSize: "15",
+      apiKey,
+    }).toString();
+
+    return fetch(endpoint).then((response) => {
       if (!response.ok) {
         throw new Error("NewsAPI request failed");
       }
-
       return response.json();
+    });
+  };
+
+  loadApiKey()
+    .then((apiKey) => {
+      if (!apiKey) {
+        throw new Error("API_KEY missing in .env");
+      }
+      return fetchPosts(apiKey);
     })
     .then((data) => {
       const articles = (data.articles || []).filter(
