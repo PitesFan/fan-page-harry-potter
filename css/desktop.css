@@ -280,6 +280,7 @@
 }
 
 .contact-form {
+  width: 100%;
   display: flex;
   flex-direction: column;
   row-gap: 32px;
@@ -394,6 +395,7 @@
   grid-column: 1/13;
   display: flex;
   justify-content: space-between;
+  width: 100%;
   align-items: center;
   padding: 8px;
   border-radius: 16px;
