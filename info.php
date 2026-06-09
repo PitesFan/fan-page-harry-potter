@@ -12,7 +12,7 @@ if (!in_array($selected_lang, $allowed_langs)) {
 
 $_SESSION['lang'] = $selected_lang;
 
-require_once "data/{$selected_lang}/news.php";
+require_once "data/{$selected_lang}/info.php";
 
 $theme = [];
 $allowed_themes = ['dark', 'light'];
@@ -24,6 +24,11 @@ if (!in_array($selected_theme, $allowed_themes)) {
 $_SESSION['theme'] = $selected_theme;
 $theme = $selected_theme;
 $next_theme = $theme === 'dark' ? 'light' : 'dark';
+
+$info_labels = [
+    'book' => $lang['bookBadge'] ?? 'Book',
+    'movie' => $lang['movieBadge'] ?? 'Movie',
+];
 
 ?>
 
@@ -56,10 +61,10 @@ $next_theme = $theme === 'dark' ? 'light' : 'dark';
                         <a class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>" href="<?php echo $lang['navLinks'][1]['url']; ?>"><?php echo $lang['navLinks'][1]['label']; ?></a>
                     </li>
                     <li>
-                        <a class="accent" href="<?php echo $lang['navLinks'][2]['url']; ?>"><?php echo $lang['navLinks'][2]['label']; ?></a>
+                        <a class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>" href="<?php echo $lang['navLinks'][2]['url']; ?>"><?php echo $lang['navLinks'][2]['label']; ?></a>
                     </li>
                     <li>
-                        <a class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>" href="<?php echo $lang['navLinks'][3]['url']; ?>"><?php echo $lang['navLinks'][3]['label']; ?></a>
+                        <a class="accent" href="<?php echo $lang['navLinks'][3]['url']; ?>"><?php echo $lang['navLinks'][3]['label']; ?></a>
                     </li>
                     <li>
                         <a class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>" href="<?php echo $lang['navLinks'][4]['url']; ?>"><?php echo $lang['navLinks'][4]['label']; ?></a>
@@ -102,10 +107,10 @@ $next_theme = $theme === 'dark' ? 'light' : 'dark';
                     <a class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>" href="<?php echo $lang['navLinks'][1]['url']; ?>"><?php echo $lang['navLinks'][1]['label']; ?></a>
                 </li>
                 <li>
-                    <a class="accent" href="<?php echo $lang['navLinks'][2]['url']; ?>"><?php echo $lang['navLinks'][2]['label']; ?></a>
+                    <a class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>" href="<?php echo $lang['navLinks'][2]['url']; ?>"><?php echo $lang['navLinks'][2]['label']; ?></a>
                 </li>
                 <li>
-                    <a class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>" href="<?php echo $lang['navLinks'][3]['url']; ?>"><?php echo $lang['navLinks'][3]['label']; ?></a>
+                    <a class="accent" href="<?php echo $lang['navLinks'][3]['url']; ?>"><?php echo $lang['navLinks'][3]['label']; ?></a>
                 </li>
                 <li>
                     <a class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>" href="<?php echo $lang['navLinks'][4]['url']; ?>"><?php echo $lang['navLinks'][4]['label']; ?></a>
@@ -139,17 +144,28 @@ $next_theme = $theme === 'dark' ? 'light' : 'dark';
 
     </section>
 
-    <section class="section section-margin" id="posts">
+    <section class="section section-margin" id="info">
         <div class="news-section section">
             <div class="news-texts">
-                <h2 class="<?php echo $theme === 'dark' ? 'white' : 'dark'; ?>"><?php echo $lang['h2-posts'] ?></h2>
-                <p class="<?php echo $theme === 'dark' ? 'light-gray' : 'dark-gray'; ?>"><?php echo $lang['p-posts'] ?></p>
+                <h2 class="<?php echo $theme === 'dark' ? 'white' : 'dark'; ?>"><?php echo $lang['h2-info'] ?></h2>
+                <p class="<?php echo $theme === 'dark' ? 'light-gray' : 'dark-gray'; ?>"><?php echo $lang['p-info'] ?></p>
             </div>
-            <div class="posts-grid">
+
+            <h3 class="info-section-title <?php echo $theme === 'dark' ? 'white' : 'dark'; ?>" id="books-heading"><?php echo $lang['h3-books']; ?></h3>
+            <div class="posts-grid" id="books-grid">
                 <div class="post <?php echo $theme === 'dark' ? 'white-bg' : 'black-bg'; ?>">
                     <img class="post-img" src="images/post-img-test.jpg" alt="">
-                    <h4 class="post-title <?php echo $theme === 'dark' ? 'black' : 'white'; ?>">The Art of Spells ⚡</h4>
-                    <p class="post-description <?php echo $theme === 'dark' ? 'dark-gray' : 'light-gray'; ?>">A quick guide to mastering basic spells in the wizarding world.</p>
+                    <h4 class="post-title <?php echo $theme === 'dark' ? 'black' : 'white'; ?>">Loading books...</h4>
+                    <p class="post-description <?php echo $theme === 'dark' ? 'dark-gray' : 'light-gray'; ?>">Fetching the wizarding world from the PotterDB API.</p>
+                </div>
+            </div>
+
+            <h3 class="info-section-title <?php echo $theme === 'dark' ? 'white' : 'dark'; ?>" id="movies-heading"><?php echo $lang['h3-movies']; ?></h3>
+            <div class="posts-grid" id="movies-grid">
+                <div class="post <?php echo $theme === 'dark' ? 'white-bg' : 'black-bg'; ?>">
+                    <img class="post-img" src="images/post-img-test.jpg" alt="">
+                    <h4 class="post-title <?php echo $theme === 'dark' ? 'black' : 'white'; ?>">Loading movies...</h4>
+                    <p class="post-description <?php echo $theme === 'dark' ? 'dark-gray' : 'light-gray'; ?>">Fetching the wizarding world from the PotterDB API.</p>
                 </div>
             </div>
         </div>
@@ -163,7 +179,10 @@ $next_theme = $theme === 'dark' ? 'light' : 'dark';
         </div>
     </section>
 
-    <script src="js/newsapi-posts.js"></script>
+    <script>
+        window.infoLabels = <?php echo json_encode($info_labels, JSON_UNESCAPED_UNICODE); ?>;
+    </script>
+    <script src="js/info-api.js"></script>
     <script src="js/main.js"></script>
 </body>
 

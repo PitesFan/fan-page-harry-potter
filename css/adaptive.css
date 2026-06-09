@@ -91,6 +91,11 @@
   .hero-section {
     gap: 10%;
   }
+
+  .news-section p {
+    font-size: 18px;
+  }
+
   p {
     font-size: 16px;
   }
@@ -130,6 +135,9 @@
     font-size: 12px;
   }
   .profile-details-row p {
+    font-size: 18px;
+  }
+  .news-section p {
     font-size: 18px;
   }
 }

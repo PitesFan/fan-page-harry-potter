@@ -72,6 +72,9 @@ if (isset($_POST['submit'])) {
                     <li>
                         <a class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>" href="<?php echo $lang['navLinks'][3]['url']; ?>"><?php echo $lang['navLinks'][3]['label']; ?></a>
                     </li>
+                    <li>
+                        <a class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>" href="<?php echo $lang['navLinks'][4]['url']; ?>"><?php echo $lang['navLinks'][4]['label']; ?></a>
+                    </li>
                 </ul>
 
                 <div class="header-buttons">
@@ -102,6 +105,9 @@ if (isset($_POST['submit'])) {
                 </li>
                 <li>
                     <a class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>" href="<?php echo $lang['navLinks'][3]['url']; ?>"><?php echo $lang['navLinks'][3]['label']; ?></a>
+                </li>
+                <li>
+                    <a class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>" href="<?php echo $lang['navLinks'][4]['url']; ?>"><?php echo $lang['navLinks'][4]['label']; ?></a>
                 </li>
             </ul>
 

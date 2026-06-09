@@ -61,6 +61,9 @@ $next_theme = $theme === 'dark' ? 'light' : 'dark';
                     <li>
                         <a class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>" href="<?php echo $lang['navLinks'][3]['url']; ?>"><?php echo $lang['navLinks'][3]['label']; ?></a>
                     </li>
+                    <li>
+                        <a class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>" href="<?php echo $lang['navLinks'][4]['url']; ?>"><?php echo $lang['navLinks'][4]['label']; ?></a>
+                    </li>
                 </ul>
                 <?php if (isset($_SESSION['user'])) { ?> <div class="header-buttons">
                         <a href="account.php" class="button profile-btn <?php echo $theme === 'dark' ? 'black-bg' : 'white-bg'; ?>"><img src="<?php echo $theme === 'dark' ? 'images/profile-icon.svg' : 'images/profile-icon-black.svg'; ?>" alt=""></a>
@@ -103,6 +106,9 @@ $next_theme = $theme === 'dark' ? 'light' : 'dark';
                 </li>
                 <li>
                     <a class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>" href="<?php echo $lang['navLinks'][3]['url']; ?>"><?php echo $lang['navLinks'][3]['label']; ?></a>
+                </li>
+                <li>
+                    <a class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>" href="<?php echo $lang['navLinks'][4]['url']; ?>"><?php echo $lang['navLinks'][4]['label']; ?></a>
                 </li>
             </ul>
             <?php if (isset($_SESSION['user'])) { ?> <div class="header-buttons">

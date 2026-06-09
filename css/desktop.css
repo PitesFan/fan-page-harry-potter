@@ -389,6 +389,11 @@
   border-radius: 8px;
 }
 
+.info-section-title {
+  grid-column: 1 / 13;
+  text-align: left;
+}
+
 /* Footer */
 
 .footer {

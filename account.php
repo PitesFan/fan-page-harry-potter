@@ -143,6 +143,9 @@ $feedback_type = $_GET['type'] ?? '';
                     <li>
                         <a class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>" href="<?php echo $lang['navLinks'][3]['url']; ?>"><?php echo $lang['navLinks'][3]['label']; ?></a>
                     </li>
+                    <li>
+                        <a class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>" href="<?php echo $lang['navLinks'][4]['url']; ?>"><?php echo $lang['navLinks'][4]['label']; ?></a>
+                    </li>
                 </ul>
                 <div class="header-buttons">
                     <a href="account.php" class="button profile-btn <?php echo $theme === 'dark' ? 'black-bg' : 'white-bg'; ?>"><img src="<?php echo $theme === 'dark' ? 'images/profile-icon.svg' : 'images/profile-icon-black.svg'; ?>" alt=""></a>
@@ -172,6 +175,9 @@ $feedback_type = $_GET['type'] ?? '';
                 </li>
                 <li>
                     <a class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>" href="<?php echo $lang['navLinks'][3]['url']; ?>"><?php echo $lang['navLinks'][3]['label']; ?></a>
+                </li>
+                <li>
+                    <a class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>" href="<?php echo $lang['navLinks'][4]['url']; ?>"><?php echo $lang['navLinks'][4]['label']; ?></a>
                 </li>
             </ul>
             <div class="header-buttons">

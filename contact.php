@@ -118,7 +118,10 @@ if (isset($_SESSION['contact_success'])) {
                         <a class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>" href="<?php echo $lang['navLinks'][2]['url']; ?>"><?php echo $lang['navLinks'][2]['label']; ?></a>
                     </li>
                     <li>
-                        <a class="accent" href="<?php echo $lang['navLinks'][3]['url']; ?>"><?php echo $lang['navLinks'][3]['label']; ?></a>
+                        <a class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>" href="<?php echo $lang['navLinks'][3]['url']; ?>"><?php echo $lang['navLinks'][3]['label']; ?></a>
+                    </li>
+                    <li>
+                        <a class="accent" href="<?php echo $lang['navLinks'][4]['url']; ?>"><?php echo $lang['navLinks'][4]['label']; ?></a>
                     </li>
                 </ul>
                 <?php if (isset($_SESSION['user'])) { ?> <div class="header-buttons">
@@ -161,7 +164,10 @@ if (isset($_SESSION['contact_success'])) {
                     <a class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>" href="<?php echo $lang['navLinks'][2]['url']; ?>"><?php echo $lang['navLinks'][2]['label']; ?></a>
                 </li>
                 <li>
-                    <a class="accent" href="<?php echo $lang['navLinks'][3]['url']; ?>"><?php echo $lang['navLinks'][3]['label']; ?></a>
+                    <a class="<?php echo $theme === 'dark' ? 'black' : 'white'; ?>" href="<?php echo $lang['navLinks'][3]['url']; ?>"><?php echo $lang['navLinks'][3]['label']; ?></a>
+                </li>
+                <li>
+                    <a class="accent" href="<?php echo $lang['navLinks'][4]['url']; ?>"><?php echo $lang['navLinks'][4]['label']; ?></a>
                 </li>
             </ul>
             <?php if (isset($_SESSION['user'])) { ?> <div class="header-buttons">
